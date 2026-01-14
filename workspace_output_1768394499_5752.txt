@@ -1,0 +1,42 @@
+        function showTerminal() {
+            document.getElementById('terminalContainer').style.display = 'block';
+            document.getElementById('networkMonitor').style.display = 'none';
+            addTerminalMessage('Terminal opened', 'info');
+        }
+
+        function hideTerminal() {
+            document.getElementById('terminalContainer').style.display = 'none';
+        }
+
+        function addTerminalMessage(message, type = 'info') {
+            console.log('Terminal message:', message, type);
+            const terminal = document.getElementById('terminalBody');
+            
+            if (!terminal) {
+                console.error('Terminal body not found');
+                return;
+            }
+            
+            const line = document.createElement('div');
+            line.className = `terminal-line ${type}`;
+            
+            const timestamp = new Date().toLocaleTimeString();
+            line.textContent = `[${timestamp}] ${message}`;
+            
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        // ==================== NETWORK MONITORING ====================
+        function showNetworkMonitor() {
+            document.getElementById('networkMonitor').style.display = 'block';
+            document.getElementById('terminalContainer').style.display = 'none';
+            addTerminalMessage('Network monitor opened', 'info');
+        }
+
+        function startNetworkMonitor() {
+            // Simulate network monitoring
+            networkMonitorInterval = setInterval(() => {
+                const uploadSpeed = (Math.random() * 10).toFixed(2);
+                const downloadSpeed = (Math.random() * 50).toFixed(2);
+                

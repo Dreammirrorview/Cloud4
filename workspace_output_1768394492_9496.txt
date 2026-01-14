@@ -1,0 +1,19 @@
+        function login() {
+            console.log('Executing login function');
+            isLoggedIn = true;
+            
+            const loginPage = document.getElementById('login-page');
+            const dashboard = document.getElementById('dashboard');
+            
+            if (loginPage) {
+                loginPage.style.display = 'none';
+                console.log('Login page hidden');
+            }
+            
+            if (dashboard) {
+                dashboard.style.display = 'block';
+                console.log('Dashboard shown');
+            }
+            
+            const currentUser = document.getElementById('currentUser');
+            if (currentUser) {

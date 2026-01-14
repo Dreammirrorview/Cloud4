@@ -1,0 +1,13 @@
+        const ADMIN_CREDENTIALS = {
+            username: 'olawale abdul-ganiyu',
+            password: 'admin123'
+        };
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+--
+            if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                login();
+            } else {
+                alert('Invalid credentials! Access denied.');
+                addTerminalMessage('Login failed: Invalid credentials', 'error');
+            }

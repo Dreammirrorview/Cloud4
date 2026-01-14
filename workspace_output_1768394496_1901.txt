@@ -1,0 +1,4 @@
+673:                <button class="header-button" onclick="showNetworkMonitor()">📊 Network</button>
+674:                <button class="header-button" onclick="showTerminal()">💻 Terminal</button>
+1509:        function showTerminal() {
+1539:        function showNetworkMonitor() {
